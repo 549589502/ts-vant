@@ -12,20 +12,21 @@
 import { Vue, Component } from "vue-property-decorator";
 @Component({})
 export default class App extends Vue {
-  private mounted() {
-    window.addEventListener("onresize", () => {
-      this.setRem();
-    });
-  }
-  private setRem() {
-    // 320 默认大小16px; 320px = 20rem ;每个元素px基础上/16
-    const htmlWidth =
-      document.documentElement.clientWidth || document.body.clientWidth;
-    //得到html的Dom元素
-    const htmlDom = document.getElementsByTagName("html")[0];
-    //设置根元素字体大小
-    htmlDom.style.fontSize = htmlWidth / 20 + "px";
-  }
+  //用了lib-flexible 用于设置 rem 基准值，就不需要以下代码
+  // private mounted() {
+  //   window.addEventListener("onresize", () => {
+  //     this.setRem();
+  //   });
+  // }
+  // private setRem() {
+  //   // 320 默认大小16px; 320px = 20rem ;每个元素px基础上/16
+  //   const htmlWidth =
+  //     document.documentElement.clientWidth || document.body.clientWidth;
+  //   //得到html的Dom元素
+  //   const htmlDom = document.getElementsByTagName("html")[0];
+  //   //设置根元素字体大小
+  //   htmlDom.style.fontSize = htmlWidth /20 + "px";
+  // }
 }
 </script>
 
