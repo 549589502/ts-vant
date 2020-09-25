@@ -25,6 +25,47 @@ export default class App extends Vue {
   //   //设置根元素字体大小
   //   htmlDom.style.fontSize = htmlWidth /20 + "px";
   // }
+
+  private mounted() {
+    //处理vuex刷新数据丢失问题：
+    if (localStorage.getItem("aps_token")) {
+      this.$store.commit("USER_TOKEN", localStorage.getItem("aps_token"));
+    }
+    if (localStorage.getItem("aps_userInfo")) {
+      //强制转成字符串再转json：
+      this.$store.commit(
+        "USER_INFO",
+        JSON.parse(String(localStorage.getItem("aps_userInfo")))
+      );
+    }
+    if (localStorage.getItem("aps_userName")) {
+      this.$store.commit("USER_USERNAME", localStorage.getItem("aps_userName"));
+    }
+    if (localStorage.getItem("aps_userPassword")) {
+      this.$store.commit(
+        "USER_PASSWORD",
+        localStorage.getItem("aps_userPassword")
+      );
+    }
+    //在页面刷新时将vuex里的信息保存到localStorage里
+    window.addEventListener("beforeunload", () => {
+      if (localStorage.getItem("aps_token")) {
+        localStorage.setItem("aps_token", this.$store.getters.token);
+      }
+      if (localStorage.getItem("aps_userInfo")) {
+        localStorage.setItem(
+          "aps_userInfo",
+          JSON.stringify(this.$store.getters.userInfo)
+        );
+      }
+      if (localStorage.getItem("aps_userName")) {
+        localStorage.setItem("aps_userName", this.$store.getters.username);
+      }
+      if (localStorage.getItem("aps_userPassword")) {
+        localStorage.setItem("aps_userPassword", this.$store.getters.password);
+      }
+    });
+  }
 }
 </script>
 

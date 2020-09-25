@@ -7,7 +7,7 @@ module.exports = {
         open: true,
         proxy: {
             '/xbbackend': {
-                target: 'http://192.168.1.182:3004', //
+                target: 'http://0.0.0.127', //
                 ws: false,
                 changeOrigin: true
             },

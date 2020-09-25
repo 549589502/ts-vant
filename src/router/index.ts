@@ -50,4 +50,18 @@ const router = new VueRouter({
   routes
 })
 
+//路由拦截：如果有token才可以进去
+router.beforeEach((to, from, next) => {
+  //当前去的页面名称：
+  let toName: string = to.name as string;
+  //没有token，返回登录页：
+  if (window.localStorage.getItem("aps_token")) {
+    next();
+  } else {
+    next({
+      path: '/login',
+    })
+  }
+})
+
 export default router

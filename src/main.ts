@@ -15,15 +15,6 @@ import './common/style/common.less'
 
 Vue.config.productionTip = false
 
-import VueAxios from './common/plugins/plugin-axios';
-//测试环境内网：
-const baseUrl = 'http://192.168.1.182:3004/xbbackend';
-//测试环境外网：
-// const baseUrl = 'http://14.215.246.10:13000/tms';
-//正式环境：
-//const baseUrl = 'https://tmos.cloudiip.com/tms';
-Vue.use(VueAxios, baseUrl);
-
 new Vue({
   router,
   store,
