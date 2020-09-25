@@ -3,7 +3,7 @@ module.exports = {
     runtimeCompiler: true,
     lintOnSave: false,
     devServer: {
-        port: 8090,
+        port: 9090,
         open: true,
         proxy: {
             '/tms': {

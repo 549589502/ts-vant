@@ -1,12 +1,21 @@
 import Vue from 'vue';
 import { Button } from 'vant';
 import { Popup } from 'vant';
-
 import { DropdownMenu, DropdownItem } from 'vant';
-
-
+import { Form } from 'vant';
+import { Field } from 'vant';
+import { Checkbox, CheckboxGroup } from 'vant';
+import { NavBar } from 'vant';
+import { Tabbar, TabbarItem } from 'vant';
 
 Vue.use(Button);
 Vue.use(Popup);
 Vue.use(DropdownMenu);
 Vue.use(DropdownItem);
+Vue.use(Form);
+Vue.use(Field);
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
+Vue.use(NavBar);
+Vue.use(Tabbar);
+Vue.use(TabbarItem);
