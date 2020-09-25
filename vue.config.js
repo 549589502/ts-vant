@@ -6,8 +6,8 @@ module.exports = {
         port: 9090,
         open: true,
         proxy: {
-            '/tms': {
-                target: 'http://14.215.246.10:13000/tms',
+            '/xbbackend': {
+                target: 'http://192.168.1.182:3004', //
                 ws: false,
                 changeOrigin: true
             },

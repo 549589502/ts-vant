@@ -25,6 +25,15 @@ const routes: Array<RouteConfig> = [
     name: 'login',
     component: () => import('../views/login.vue')
   },
+  //班组报产
+  {
+    path: '/schedulingReport',
+    name: 'schedulingReport',
+    component: () => import('../views/menu/schedulingReport.vue')
+  },
+
+
+
   {
     path: '/about',
     name: 'About',

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import user from './user-store';
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -11,5 +11,7 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
+    //用户模块
+    user,
   }
 })
